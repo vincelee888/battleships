@@ -1,5 +1,5 @@
 {
-  "name": "battleships bot",
+  "name": "battleships-bot",
   "description": "bot for xpman battleships bot tournament",
   "main": "index.js",
   "scripts": {
