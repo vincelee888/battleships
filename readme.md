@@ -1,0 +1,1 @@
+bot for xpman chrimbo battleships tourney: http://beatthebots.apphb.com/battleships/
