@@ -1,23 +1,23 @@
-describe("Battleships start", function() {
+describe('Battleships start', function() {
 	var Battleships = require('../../lib/Battleships/Battleships')
 	var game
 
 	beforeEach(function() {
 		game = new Battleships()
 		game.start({
-      "maxTurns" : 150,
-      "gridSize" : "J10",
-      "players"  : ["playerOne", "playerTwo"],
-      "ships" : ["CARRIER", "DESTROYER", "FRIGATE", "FRIGATE", "GUNBOAT"],
-      "mineCount" : 3
+      'maxTurns' : 150,
+      'gridSize' : 'J10',
+      'players'  : ['playerOne', 'playerTwo'],
+      'ships' : ['CARRIER', 'DESTROYER', 'FRIGATE', 'FRIGATE', 'GUNBOAT'],
+      'mineCount' : 3
     })
 	})
 
-  it("should record maxTurns", function() {
+  it('should record maxTurns', function() {
     expect(game.maxTurns).toEqual(150)
   })
 
-  it("should create an empty game board for the enemy", function() {
+  it('should create an empty game board for the enemy', function() {
     expect(game.enemyFleet.length).toEqual(10)
 
     for(var i = 0; i < game.enemyFleet.length; i++) {
