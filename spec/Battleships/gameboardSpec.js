@@ -30,7 +30,7 @@ describe('GameBoard', function() {
     })
   })
 
-  describe('updating', function() {
+  describe('turns', function() {
     var stu
     beforeEach(function() {
       var initialSize = {
@@ -53,6 +53,22 @@ describe('GameBoard', function() {
     it('should place mine', function() {
       stu.mine({ 'x': 2, 'y': 2 })
       expect(stu.output()).toEqual('---\n-m-\n---')
+    })
+  })
+
+  describe('ship placement', function() {
+    var stu
+    beforeEach(function() {
+      var initialSize = {
+        'columns': 3,
+        'rows': 3
+      }
+      stu = new GameBoard(initialSize)
+    })
+
+    it('should place single cell ship', function() {
+      stu.ship({ 'x': 2, 'y': 2 })
+      expect(stu.output()).toEqual('---\n-B-\n---')
     })
   })
 })
