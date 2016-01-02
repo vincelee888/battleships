@@ -1,5 +1,7 @@
 describe('GameBoard', function() {
   var GameBoard = require('../../lib/Battleships/GameBoard')
+  var Visualiser = require('../../lib/Battleships/GameBoardVisualiser')
+  var visualiser = new Visualiser()
 
   describe('creation', function() {
     it('should create 1x1 board', function() {
@@ -8,7 +10,7 @@ describe('GameBoard', function() {
         'rows': 1
       }
       var stu = new GameBoard(initialSize)
-      expect(stu.output()).toEqual('-')
+      expect(visualiser.output(stu)).toEqual('-')
     })
 
     it('should create board with many columns', function() {
@@ -17,7 +19,7 @@ describe('GameBoard', function() {
         'rows': 1
       }
       var stu = new GameBoard(initialSize)
-      expect(stu.output()).toEqual('---')
+      expect(visualiser.output(stu)).toEqual('---')
     })
 
     it('should create board with many rows', function() {
@@ -26,7 +28,7 @@ describe('GameBoard', function() {
         'rows': 3
       }
       var stu = new GameBoard(initialSize)
-      expect(stu.output()).toEqual('-\n-\n-')
+      expect(visualiser.output(stu)).toEqual('-\n-\n-')
     })
   })
 
@@ -42,17 +44,17 @@ describe('GameBoard', function() {
 
     it('should place hit', function() {
       stu.hit({ 'x': 3, 'y': 2 })
-      expect(stu.output()).toEqual('---\n--*\n---')
+      expect(visualiser.output(stu)).toEqual('---\n--*\n---')
     })
 
     it('should place miss', function() {
       stu.miss({ 'x': 3, 'y': 2 })
-      expect(stu.output()).toEqual('---\n--o\n---')
+      expect(visualiser.output(stu)).toEqual('---\n--o\n---')
     })
 
     it('should place mine', function() {
       stu.mine({ 'x': 3, 'y': 2 })
-      expect(stu.output()).toEqual('---\n--m\n---')
+      expect(visualiser.output(stu)).toEqual('---\n--m\n---')
     })
   })
 
@@ -68,12 +70,17 @@ describe('GameBoard', function() {
 
     it('should place single cell ship', function() {
       stu.ship({ 'x': 2, 'y': 2 })
-      expect(stu.output()).toEqual('---\n-B-\n---')
+      expect(visualiser.output(stu)).toEqual('---\n-B-\n---')
     })
 
     it('should place longer ship horizontally', function() {
       stu.ship({ 'x': 1, 'y': 2, 'length': 3 })
-      expect(stu.output()).toEqual('---\nBBB\n---')
+      expect(visualiser.output(stu)).toEqual('---\nBBB\n---')
+    })
+
+    it('should place longer ship vertically', function() {
+      stu.ship({ 'x': 2, 'y': 1, 'length': 3, 'orientation': 'vertically' })
+      expect(visualiser.output(stu)).toEqual('-B-\n-B-\n-B-')
     })
   })
 })
