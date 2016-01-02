@@ -41,18 +41,18 @@ describe('GameBoard', function() {
     })
 
     it('should place hit', function() {
-      stu.hit({ 'x': 2, 'y': 2 })
-      expect(stu.output()).toEqual('---\n-*-\n---')
+      stu.hit({ 'x': 3, 'y': 2 })
+      expect(stu.output()).toEqual('---\n--*\n---')
     })
 
     it('should place miss', function() {
-      stu.miss({ 'x': 2, 'y': 2 })
-      expect(stu.output()).toEqual('---\n-o-\n---')
+      stu.miss({ 'x': 3, 'y': 2 })
+      expect(stu.output()).toEqual('---\n--o\n---')
     })
 
     it('should place mine', function() {
-      stu.mine({ 'x': 2, 'y': 2 })
-      expect(stu.output()).toEqual('---\n-m-\n---')
+      stu.mine({ 'x': 3, 'y': 2 })
+      expect(stu.output()).toEqual('---\n--m\n---')
     })
   })
 
@@ -72,7 +72,7 @@ describe('GameBoard', function() {
     })
 
     it('should place longer ship horizontally', function() {
-      stu.ship({ 'x': 1, 'y': 1, 'length': 3 })
+      stu.ship({ 'x': 1, 'y': 2, 'length': 3 })
       expect(stu.output()).toEqual('---\nBBB\n---')
     })
   })
