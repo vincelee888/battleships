@@ -18,10 +18,10 @@ describe("Battleships start", function() {
   })
 
   it("should create an empty game board for the enemy", function() {
-    expect(game.enemyFleet.length).toEqual(10)
+    expect(game.enemyFleet.board.alphas).toEqual(10)
 
-    for(var i = 0; i < game.enemyFleet.length; i++) {
-      expect(game.enemyFleet[i].length).toEqual(10)
+    for(var i = 0; i < game.enemyFleet.alphas; i++) {
+      expect(game.enemyFleet[i].numerics).toEqual(10)
     }
   })
 })
