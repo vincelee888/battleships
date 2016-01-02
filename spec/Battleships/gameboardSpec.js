@@ -70,5 +70,10 @@ describe('GameBoard', function() {
       stu.ship({ 'x': 2, 'y': 2 })
       expect(stu.output()).toEqual('---\n-B-\n---')
     })
+
+    it('should place longer ship horizontally', function() {
+      stu.ship({ 'x': 1, 'y': 1, 'length': 3 })
+      expect(stu.output()).toEqual('---\nBBB\n---')
+    })
   })
 })
