@@ -51,7 +51,7 @@ describe('GameBoard', function() {
     })
 
     it('should place mine', function() {
-      stu.miss({ 'x': 2, 'y': 2 })
+      stu.mine({ 'x': 2, 'y': 2 })
       expect(stu.output()).toEqual('---\n-m-\n---')
     })
   })
