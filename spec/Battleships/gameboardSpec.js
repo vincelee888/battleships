@@ -22,6 +22,15 @@ describe('GameBoard', function() {
       expect(visualiser.output(stu)).toEqual('---')
     })
 
+    it('should set width', function() {
+      var initialSize = {
+        'columns': 3,
+        'rows': 1
+      }
+      var stu = new GameBoard(initialSize)
+      expect(stu.width).toEqual(3)
+    })
+
     it('should create board with many rows', function() {
       var initialSize = {
         'columns': 1,

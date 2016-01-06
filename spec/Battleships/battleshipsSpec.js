@@ -17,11 +17,7 @@ describe('Battleships start', function() {
     expect(game.maxTurns).toEqual(150)
   })
 
-  it('should create an empty game board for the enemy', function() {
-    expect(game.enemyFleet.length).toEqual(10)
-
-    for(var i = 0; i < game.enemyFleet.length; i++) {
-      expect(game.enemyFleet[i].length).toEqual(10)
-    }
+  it('should create an empty game board for the enemy ships', function() {
+    expect(game.enemyFleet.board.width).toEqual(10)
   })
 })
