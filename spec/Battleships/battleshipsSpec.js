@@ -19,5 +19,6 @@ describe('Battleships start', function() {
 
   it('should create an empty game board for the enemy ships', function() {
     expect(game.enemyFleet.board.width).toEqual(10)
+    expect(game.enemyFleet.board.height).toEqual(10)
   })
 })
