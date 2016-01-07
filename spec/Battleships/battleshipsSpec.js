@@ -21,4 +21,16 @@ describe('Battleships start', function() {
     expect(game.enemyFleet.board.width).toEqual(10)
     expect(game.enemyFleet.board.height).toEqual(10)
   })
+
+  it('should initialise a collection of ships for the enemy', function() {
+    expect(game.enemyFleet.ships.length).toEqual(5)
+  })
+
+  it('should initialise a collection of ships for the player', function() {
+    expect(game.playerFleet.ships.length).toEqual(5)
+  })
+
+  it('should initialise mineCount for the enemy', function() {
+    expect(game.enemyFleet.mineCount).toEqual(3)
+  })
 })
