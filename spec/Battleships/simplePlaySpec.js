@@ -4,11 +4,11 @@ describe('1x1 game', function() {
       move
 
   beforeEach(function() {
-    game = new Battleships()
+    game = new Battleships('player')
     game.start({
       'maxTurns' : 2,
       'gridSize' : 'A1',
-      'players'  : ['playerOne', 'playerTwo'],
+      'players'  : ['player', 'enemy'],
       'ships' : ['CARRIER', 'DESTROYER', 'FRIGATE', 'FRIGATE', 'GUNBOAT'],
       'mineCount' : 0
     })
@@ -38,7 +38,7 @@ describe('1x2 game', function() {
     })
 
     move1 = game.move()
-    game.registerEnemyHit(move1.gridReference)
+    game.registerHit('player', move1.gridReference)
     move2 = game.move()
   })
   it('should not attack same cell twice', function() {

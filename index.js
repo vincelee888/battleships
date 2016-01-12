@@ -1,7 +1,9 @@
 var express = require('express')
 var app = express()
 
-var game = require('/lib/battleships')
+var Battleships = require('/lib/battleships')
+
+var game = new Battleships('IDoubtRihannasNauticalCredentials')
 
 app.set('port', (process.env.PORT || 5000))
 
