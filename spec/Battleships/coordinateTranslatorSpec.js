@@ -1,13 +1,18 @@
 describe('CoordinateTranslator', function() {
-	var translator = require('../../lib/Battleships/CoordinateTranslator')	
+	var Translator = require('../../lib/Battleships/CoordinateTranslator')	
+  var translator = new Translator()
 
 	it('should translator columns as character in its position in the alphabet', function() {
-		expect(translator.translate("A1").columns).toEqual(1)
-		expect(translator.translate("Z1").columns).toEqual(26)
+		expect(translator.decode("A1").x).toEqual(1)
+		expect(translator.decode("Z1").x).toEqual(26)
 	})
 
 	it('should translator rows as the remaining numerical value', function() {
-		expect(translator.translate("A1").rows).toEqual(1)
-		expect(translator.translate("A26").rows).toEqual(26)
+		expect(translator.decode("A1").y).toEqual(1)
+		expect(translator.decode("A26").y).toEqual(26)
+	})
+
+	it('should encode coordinates back into grid references', function() {
+		expect(translator.encode(5,5)).toEqual('E5')
 	})
 })

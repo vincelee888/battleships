@@ -6,8 +6,8 @@ describe('GameBoard', function() {
   describe('creation', function() {
     it('should create 1x1 board', function() {
       var initialSize = {
-        'columns': 1,
-        'rows': 1
+        'x': 1,
+        'y': 1
       }
       var stu = new GameBoard(initialSize)
       expect(visualiser.output(stu)).toEqual('-')
@@ -15,8 +15,8 @@ describe('GameBoard', function() {
 
     it('should create board with many columns', function() {
       var initialSize = {
-        'columns': 3,
-        'rows': 1
+        'x': 3,
+        'y': 1
       }
       var stu = new GameBoard(initialSize)
       expect(visualiser.output(stu)).toEqual('---')
@@ -24,8 +24,8 @@ describe('GameBoard', function() {
 
     it('should set width', function() {
       var initialSize = {
-        'columns': 3,
-        'rows': 1
+        'x': 3,
+        'y': 1
       }
       var stu = new GameBoard(initialSize)
       expect(stu.width).toEqual(3)
@@ -33,8 +33,8 @@ describe('GameBoard', function() {
 
     it('should create board with many rows', function() {
       var initialSize = {
-        'columns': 1,
-        'rows': 3
+        'x': 1,
+        'y': 3
       }
       var stu = new GameBoard(initialSize)
       expect(visualiser.output(stu)).toEqual('-\n-\n-')
@@ -45,8 +45,8 @@ describe('GameBoard', function() {
     var stu
     beforeEach(function() {
       var initialSize = {
-        'columns': 3,
-        'rows': 3
+        'x': 3,
+        'y': 3
       }
       stu = new GameBoard(initialSize)
     })
@@ -71,8 +71,8 @@ describe('GameBoard', function() {
     var stu
     beforeEach(function() {
       var initialSize = {
-        'columns': 3,
-        'rows': 3
+        'x': 3,
+        'y': 3
       }
       stu = new GameBoard(initialSize)
     })
