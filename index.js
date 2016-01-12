@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 
-var Battleships = require('/lib/Battleships/Battleships')
+var Battleships = require('./lib/Battleships/Battleships')
 
 var game = new Battleships('IDoubtRihannasNauticalCredentials')
 
