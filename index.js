@@ -24,22 +24,26 @@ app.post('/place', function(req, res) {
 })
 
 app.get('/move', function(req, res) {
-	res.sendStatus(200)
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(game.move()));
 })
 
 app.post('/hit', function(req, res) {
+	game.registerHit(req)
 	res.sendStatus(200)
 })
 
 app.post('/miss', function(req, res) {
-	res.sendStatus(200)
-})
-
-app.post('/scan', function(req, res) {
+	game.registerMiss(req)
 	res.sendStatus(200)
 })
 
 app.post('/hit_mine', function(req, res) {
+	game.registerMine(req)
+	res.sendStatus(200)
+})
+
+app.post('/scan', function(req, res) {
 	res.sendStatus(200)
 })
 

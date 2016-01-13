@@ -38,7 +38,7 @@ describe('1x2 game', function() {
     })
 
     move1 = game.move()
-    game.registerHit('player', move1.gridReference)
+    game.registerHit({'attacker': 'player', 'gridReference': move1.gridReference })
     move2 = game.move()
   })
   it('should not attack same cell twice', function() {
